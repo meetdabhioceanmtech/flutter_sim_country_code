@@ -11,7 +11,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** FlutterSimCountryCodePlugin */
 public class FlutterSimCountryCodePlugin implements FlutterPlugin, MethodCallHandler {
@@ -20,12 +19,6 @@ public class FlutterSimCountryCodePlugin implements FlutterPlugin, MethodCallHan
 
   private MethodChannel mChannel;
   private Context mContext;
-
-  /** Plugin registration. */
-  public static void registerWith(Registrar registrar) {
-    final FlutterSimCountryCodePlugin plugin = new FlutterSimCountryCodePlugin();
-    plugin.initInstance(registrar.messenger(), registrar.context());
-  }
 
   private void initInstance(BinaryMessenger messenger, Context context) {
     mChannel = new MethodChannel(messenger, CHANNEL_NAME);
